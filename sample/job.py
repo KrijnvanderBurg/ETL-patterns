@@ -12,5 +12,5 @@ schema = StructType([
 ])
 
 # Read sample CSV
-df = spark.read.schema(schema).option("header", "true").csv("sample_data.csv")
+df = spark.read.schema(schema).option("header", "true").csv("sample/data.csv")
 df.show()
