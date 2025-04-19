@@ -2,7 +2,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, FloatType
 
 # Initialize Spark
-spark = SparkSession.builder.appName("Simple PySpark Demo").getOrCreate()
+spark = SparkSession.Builder().appName("Simple PySpark Demo").getOrCreate()
 
 # Define schema
 schema = StructType([
@@ -12,8 +12,5 @@ schema = StructType([
 ])
 
 # Read sample CSV
-print("Reading data...")
 df = spark.read.schema(schema).option("header", "true").csv("sample_data.csv")
-
-print("Show data:")
 df.show()
